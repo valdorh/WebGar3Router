@@ -2,29 +2,34 @@ import { Route, Routes } from "react-router";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import AuthLayout from "./pages/AuthLayout";
+import { AuthLayout } from "./pages/AuthLayout";
 import { AppRoutes } from "./AppRoutes";
-import LoginPage from "./pages/LoginPage";
+import { LoginPage } from "./pages/LoginPage";
 import RegPage from "./pages/RegPage";
+import { NavBar } from "./components/NavBar";
 
 function App() {
   return (
-    <Routes>
-      <Route path={AppRoutes.HOME} element={<HomePage />} />
-      <Route path={AppRoutes.ABOUT} element={<AboutPage />} />
-      <Route path={AppRoutes.AUTH} element={<AuthLayout />} />
+    <>
+      <NavBar />
 
-      <Route
-        path={`${AppRoutes.AUTH}/${AppRoutes.LOGIN}`}
-        element={<LoginPage />}
-      />
-      <Route
-        path={`${AppRoutes.AUTH}/${AppRoutes.REG}`}
-        element={<RegPage />}
-      />
+      <Routes>
+        <Route path={AppRoutes.HOME} element={<HomePage />} />
+        <Route path={AppRoutes.ABOUT} element={<AboutPage />} />
+        <Route path={AppRoutes.AUTH} element={<AuthLayout />} />
 
-      <Route path={AppRoutes.NOT_FOUND} element={<NotFoundPage />} />
-    </Routes>
+        <Route
+          path={`${AppRoutes.AUTH}/${AppRoutes.LOGIN}`}
+          element={<LoginPage />}
+        />
+        <Route
+          path={`${AppRoutes.AUTH}/${AppRoutes.REG}`}
+          element={<RegPage />}
+        />
+
+        <Route path={AppRoutes.NOT_FOUND} element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 }
 

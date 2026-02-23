@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function AuthLayout() {
+export const AuthLayout = () => {
   return (
     <div>
       <h2>Аутентификация</h2>
@@ -12,4 +12,4 @@ export default function AuthLayout() {
       <button></button>
     </div>
   );
-}
+};
